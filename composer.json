@@ -1,0 +1,13 @@
+{
+	"name": "simplyadmire/redirects",
+	"type": "typo3-flow-package",
+	"license": "LGPL-3.0",
+	"require": {
+		"typo3/flow": "3.0.*@beta"
+	},
+	"autoload": {
+		"psr-0": {
+			"SimplyAdmire\\Redirects": "Classes"
+		}
+	}
+}
