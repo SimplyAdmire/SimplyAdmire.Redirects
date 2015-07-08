@@ -33,7 +33,7 @@ class Redirect {
 	protected $targetUrl;
 
 	/**
-	 * @var string
+	 * @var integer
 	 */
 	protected $statusCode = 301;
 
@@ -49,7 +49,7 @@ class Redirect {
 	 */
 	public function setPath($path) {
 		$this->path = $path;
-		$this->setPathHash(md5($path));
+		$this->setPathHash($path);
 	}
 
 	/**
@@ -62,8 +62,8 @@ class Redirect {
 	/**
 	 * @param string $pathHash
 	 */
-	public function setPathHash($pathHash) {
-		$this->pathHash = $pathHash;
+	protected function setPathHash($pathHash) {
+		$this->pathHash = sha1($pathHash);
 	}
 
 	/**
@@ -81,14 +81,14 @@ class Redirect {
 	}
 
 	/**
-	 * @return string
+	 * @return integer
 	 */
 	public function getStatusCode() {
 		return $this->statusCode;
 	}
 
 	/**
-	 * @param string $statusCode
+	 * @param integer $statusCode
 	 */
 	public function setStatusCode($statusCode) {
 		$this->statusCode = $statusCode;
